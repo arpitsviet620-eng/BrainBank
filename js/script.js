@@ -211,13 +211,13 @@ const counterObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
         if (!e.isIntersecting) return;
         const el = e.target;
-        const target = parseInt(el.dataset.target);
+        const target = parseInt(el.dataset.count);
         const suffix = el.innerHTML.match(/<span>(.*?)<\/span>/)?.[1] || '';
         animateCount(el, target, suffix);
         counterObs.unobserve(el);
     });
 }, { threshold: 0.5 });
-document.querySelectorAll('.stat-number[data-target]').forEach(el => counterObs.observe(el));
+document.querySelectorAll('.hstat-num').forEach(el => counterObs.observe(el));
 
 /* ══════════════════════════════════════
    VANILLA TILT (course cards)
