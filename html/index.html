@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainBank - Your Complete Learning Companion</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Three.js Canvas -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Overlays -->
+    <div class="noise"></div>
+    <div class="grid-bg"></div>
+
+    <div class="page">
+
+        <!-- NAVBAR -->
+        <nav class="navbar" id="navbar">
+            <a href="#" class="logo">Brain<span class="bank">Bank</span></a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="./resourcePage.html">Resources</a></li>
+                <li><a href="./practisePage.html">Practice</a></li>
+                <li><a href="./aboutPage.html">About Us</a></li>
+                <li><a href="./contactPage.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-ghost" onclick="window.location.href='./authPage.html'">Login</button>
+                <button class="btn-glow" onclick="window.location.href='./authPage.html'">Sign Up Free
+                    →</button>
+            </div>
+        </nav>
+
+        <!-- ═══ HERO ═══ -->
+        <section class="hero" id="home">
+            <div class="hero-inner">
+                <div class="hero-left">
+                    <div class="hero-pill" id="heroPill"><span class="pill-dot"></span> 10,000+ Students Learning Now
+                    </div>
+                    <h1 class="hero-title" id="heroTitle">
+                        <span class="line"><span class="word">Your</span> <span class="word hl-o">Complete</span></span>
+                        <span class="line"><span class="word hl-b">Learning</span></span>
+                        <span class="line"><span class="word">Companion</span></span>
+                    </h1>
+                    <div class="typed-wrap" id="typedWrap">
+                        <span id="typedText"></span><span class="typed-cursor"></span>
+                    </div>
+                    <p class="hero-desc" id="heroDesc">Notes, PYQs, video lectures, and practice tests for B.Tech CSE,
+                        AI/ML, ECE, BCA, MCA and more — curated, verified, and always free.</p>
+                    <div class="hero-cta" id="heroCta">
+                        <button class="cta-primary" onclick="location.href='./resourcePage.html'">Explore Resources
+                            <span class="cta-arrow">→</span></button>
+                        <button class="cta-secondary" onclick="location.href='./practicePage.html'">Start Practice
+                            ▷</button>
+                    </div>
+                    <div class="hero-stats" id="heroStats">
+                        <div class="hstat">
+                            <div class="hstat-num" data-count="500">0<span>+</span></div>
+                            <div class="hstat-label">Resources</div>
+                        </div>
+                        <div class="hstat">
+                            <div class="hstat-num" data-count="6">0<span>+</span></div>
+                            <div class="hstat-label">Courses</div>
+                        </div>
+                        <div class="hstat">
+                            <div class="hstat-num" data-count="10">0<span>K+</span></div>
+                            <div class="hstat-label">Students</div>
+                        </div>
+                        <div class="hstat">
+                            <div class="hstat-num" data-count="98">0<span>%</span></div>
+                            <div class="hstat-label">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-right" id="heroRight">
+                    <div class="card-stack">
+                        <!-- Floating badges -->
+                        <div class="floating-badge fb1">⚡ New resources added daily</div>
+                        <div class="floating-badge fb2">🎯 98% exam success rate</div>
+
+                        <!-- Stack cards -->
+                        <div class="stack-card sc3">
+                            <div class="sc-icon b">📊</div>
+                            <div class="sc-title">DBMS & SQL</div>
+                        </div>
+                        <div class="stack-card sc2">
+                            <div class="sc-icon o">🧠</div>
+                            <div class="sc-title">AI / Machine Learning</div>
+                        </div>
+                        <div class="stack-card sc1" id="tiltCard">
+                            <div class="sc-icon o">📚</div>
+                            <div class="sc-title">B.Tech CSE — Sem 5</div>
+                            <div class="sc-sub">Data Structures & Algorithms · OS · CN · DBMS</div>
+                            <div class="sc-bar-label"><span>Course Progress</span><span>78%</span></div>
+                            <div class="sc-bar">
+                                <div class="sc-bar-fill o"></div>
+                            </div>
+                            <div class="sc-bar-label"><span>Practice Score</span><span>85%</span></div>
+                            <div class="sc-bar">
+                                <div class="sc-bar-fill b"></div>
+                            </div>
+                            <div class="sc-bar-label"><span>Resources Done</span><span>62%</span></div>
+                            <div class="sc-bar">
+                                <div class="sc-bar-fill g"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARQUEE -->
+        <div class="marquee-section">
+            <div class="marquee-track" id="marqueeTrack">
+                <!-- JS duplicates this -->
+            </div>
+        </div>
+
+        <!-- ═══ FEATURES ═══ -->
+        <section class="sec-pad">
+            <div class="container">
+                <div class="sr">
+                    <div class="sec-label">Why BrainBank</div>
+                </div>
+                <div class="sr sr-delay-1">
+                    <h2 class="sec-title">Everything students need,<br>nothing they don't</h2>
+                </div>
+                <div class="sr sr-delay-2">
+                    <p class="sec-sub">Six pillars that make BrainBank the go-to platform for thousands of learners
+                        preparing for exams and placements.</p>
+                </div>
+
+                <div class="features-grid sr">
+                    <div class="feat-card c1">
+                        <div class="feat-num">01</div>
+                        <div class="feat-icon o">📄</div>
+                        <div class="feat-title">Curated Notes</div>
+                        <div class="feat-desc">Professor-quality notes for every subject, verified by toppers and
+                            faculty alike.</div>
+                    </div>
+                    <div class="feat-card c2">
+                        <div class="feat-num">02</div>
+                        <div class="feat-icon b">📝</div>
+                        <div class="feat-title">PYQ Papers</div>
+                        <div class="feat-desc">Previous year question papers with detailed solutions and marking
+                            schemes.</div>
+                    </div>
+                    <div class="feat-card c3">
+                        <div class="feat-num">03</div>
+                        <div class="feat-icon g">▶️</div>
+                        <div class="feat-title">Video Lectures</div>
+                        <div class="feat-desc">Curated playlists from top educators with structured hour-by-hour
+                            learning paths.</div>
+                    </div>
+                    <div class="feat-card c4">
+                        <div class="feat-num">04</div>
+                        <div class="feat-icon p">🧠</div>
+                        <div class="feat-title">Practice Tests</div>
+                        <div class="feat-desc">Timed quizzes with instant feedback, explanations and performance
+                            analytics.</div>
+                    </div>
+                    <div class="feat-card c5">
+                        <div class="feat-num">05</div>
+                        <div class="feat-icon y">🔍</div>
+                        <div class="feat-title">Smart Search</div>
+                        <div class="feat-desc">Find any resource in seconds — search by subject, semester, topic or
+                            type.</div>
+                    </div>
+                    <div class="feat-card c6">
+                        <div class="feat-num">06</div>
+                        <div class="feat-icon o">⬇️</div>
+                        <div class="feat-title">Free Downloads</div>
+                        <div class="feat-desc">All PDFs and documents are 100% free to download, forever.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ═══ STATS ═══ -->
+        <div class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-cell sr">
+                        <span class="stat-icon">📚</span>
+                        <div class="stat-number" data-target="500">0<span>+</span></div>
+                        <div class="stat-desc">Learning Resources</div>
+                    </div>
+                    <div class="stat-cell sr sr-delay-1">
+                        <span class="stat-icon">🎓</span>
+                        <div class="stat-number" data-target="10000">0<span>+</span></div>
+                        <div class="stat-desc">Active Learners</div>
+                    </div>
+                    <div class="stat-cell sr sr-delay-2">
+                        <span class="stat-icon">📋</span>
+                        <div class="stat-number" data-target="60">0<span>+</span></div>
+                        <div class="stat-desc">Practice Questions</div>
+                    </div>
+                    <div class="stat-cell sr sr-delay-3">
+                        <span class="stat-icon">⭐</span>
+                        <div class="stat-number" data-target="98">0<span>%</span></div>
+                        <div class="stat-desc">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- ═══ COURSES ═══ -->
+        <section class="sec-pad">
+            <div class="container">
+                <div
+                    style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:0;flex-wrap:wrap;gap:1.5rem;">
+                    <div>
+                        <div class="sec-label sr">Popular Courses</div>
+                        <h2 class="sec-title sr sr-delay-1">Semester 6<br><span
+                                style="color:var(--orange)">Subjects</span> & More</h2>
+                    </div>
+                    <a href="./resourcePage.html" class="cta-secondary sr" style="text-decoration:none">Browse All
+                        Resources →</a>
+                </div>
+
+                <div class="courses-grid">
+                    <div class="course-card sr" data-tilt data-tilt-max="8" data-tilt-speed="400"
+                        data-tilt-perspective="1000">
+                        <div class="course-thumb">
+                            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=80" alt="AI">
+                            <div class="course-thumb-overlay"><span class="course-semester">Semester 6 · Core</span>
+                            </div>
+                        </div>
+                        <div class="course-body">
+                            <div class="course-meta">
+                                <span class="course-cat cat-core">Core</span>
+                                <span class="course-credits">4 Credits</span>
+                            </div>
+                            <div class="course-title">Artificial Intelligence</div>
+                            <div class="course-desc">Neural networks, search algorithms, machine learning foundations
+                                and intelligent agents.</div>
+                            <div class="course-footer">
+                                <div class="course-instructor">
+                                    <div class="instructor-avatar">🧑</div> Dr. Sharma
+                                </div>
+                                <a href="./resourcePage.html" class="course-btn">View Resources <span>→</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card sr sr-delay-1" data-tilt data-tilt-max="8" data-tilt-speed="400"
+                        data-tilt-perspective="1000">
+                        <div class="course-thumb">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80"
+                                alt="DSA">
+                            <div class="course-thumb-overlay"><span class="course-semester">Semester 3 · Core</span>
+                            </div>
+                        </div>
+                        <div class="course-body">
+                            <div class="course-meta">
+                                <span class="course-cat cat-core">Core</span>
+                                <span class="course-credits">4 Credits</span>
+                            </div>
+                            <div class="course-title">Data Structures & Algorithms</div>
+                            <div class="course-desc">Arrays, trees, graphs, sorting algorithms and time-space complexity
+                                analysis.</div>
+                            <div class="course-footer">
+                                <div class="course-instructor">
+                                    <div class="instructor-avatar">👩</div> Prof. Kaur
+                                </div>
+                                <a href="./resourcePage.html" class="course-btn">View Resources <span>→</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card sr sr-delay-2" data-tilt data-tilt-max="8" data-tilt-speed="400"
+                        data-tilt-perspective="1000">
+                        <div class="course-thumb">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80"
+                                alt="Networks">
+                            <div class="course-thumb-overlay"><span class="course-semester">Semester 5 · Core</span>
+                            </div>
+                        </div>
+                        <div class="course-body">
+                            <div class="course-meta">
+                                <span class="course-cat cat-elective">Elective</span>
+                                <span class="course-credits">3 Credits</span>
+                            </div>
+                            <div class="course-title">Computer Networks</div>
+                            <div class="course-desc">OSI model, TCP/IP stack, routing protocols, network security and
+                                socket programming.</div>
+                            <div class="course-footer">
+                                <div class="course-instructor">
+                                    <div class="instructor-avatar">🧑</div> Dr. Mehta
+                                </div>
+                                <a href="./resourcePage.html" class="course-btn">View Resources <span>→</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ═══ TESTIMONIALS ═══ -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="sr">
+                    <div class="sec-label">Student Reviews</div>
+                </div>
+                <div class="sr sr-delay-1">
+                    <h2 class="sec-title">Loved by <span style="color:var(--orange)">thousands</span><br>of students
+                    </h2>
+                </div>
+
+                <div class="testi-grid">
+                    <div class="testi-card sr">
+                        <div class="stars">★★★★★</div>
+                        <div class="testi-quote">"</div>
+                        <div class="testi-text">BrainBank completely changed how I prepare for exams. The PYQ papers
+                            with solutions saved me weeks of searching. Scored 92% in DBMS thanks to the notes here!
+                        </div>
+                        <div class="testi-author">
+                            <img class="author-avatar"
+                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="">
+                            <div>
+                                <div class="author-name">Arjun Mehta</div>
+                                <div class="author-role">B.Tech CSE · Sem 6</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card sr sr-delay-1">
+                        <div class="stars">★★★★★</div>
+                        <div class="testi-quote">"</div>
+                        <div class="testi-text">The practice section is addictive! I do 20 aptitude questions every
+                            morning. My logical reasoning improved dramatically. Got placed at a top MNC — BrainBank
+                            played a huge role.</div>
+                        <div class="testi-author">
+                            <img class="author-avatar"
+                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" alt="">
+                            <div>
+                                <div class="author-name">Priya Singh</div>
+                                <div class="author-role">MCA · Final Year</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card sr sr-delay-2">
+                        <div class="stars">★★★★★</div>
+                        <div class="testi-quote">"</div>
+                        <div class="testi-text">As an AI/ML student, finding quality deep learning notes was always
+                            hard. BrainBank has everything — from ML fundamentals to transformer architecture.
+                            Absolutely brilliant platform!</div>
+                        <div class="testi-author">
+                            <img class="author-avatar"
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="">
+                            <div>
+                                <div class="author-name">Rohan Verma</div>
+                                <div class="author-role">B.Tech AI/ML · Sem 5</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ═══ CTA ═══ -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-inner">
+                    <span class="cta-tag sr">Start Today — It's Free</span>
+                    <h2 class="cta-title sr sr-delay-1">Ready to <span style="color:var(--orange)">ace</span><br>your
+                        exams?</h2>
+                    <p class="cta-sub sr sr-delay-2">Join thousands of students who trust BrainBank. Zero cost, zero
+                        compromise on quality.</p>
+                    <div class="cta-btns sr sr-delay-3">
+                        <button class="cta-primary" onclick="location.href='./resourcePage.html'">Explore Resources
+                            <span class="cta-arrow">→</span></button>
+                        <button class="cta-secondary" onclick="location.href='./practicePage.html'">Start Practising
+                            ▷</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ FOOTER ═══ -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <a href="#" class="footer-logo">Brain<span class="bank">Bank</span></a>
+                        <p class="footer-tagline">Your complete learning companion for B.Tech, BCA, MCA and more. Notes,
+                            PYQs, videos and practice — all free, all in one place.</p>
+                        <div class="footer-socials">
+                            <a href="#" class="social-icon">𝕏</a>
+                            <a href="#" class="social-icon">in</a>
+                            <a href="#" class="social-icon">📸</a>
+                            <a href="#" class="social-icon">⌥</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="footer-col-title">Resources</div>
+                        <ul class="footer-links">
+                            <li><a href="./resourcePage.html">All Documents</a></li>
+                            <li><a href="./resourcePage.html">Notes</a></li>
+                            <li><a href="./resourcePage.html">PYQ Papers</a></li>
+                            <li><a href="./resourcePage.html">Video Lectures</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="footer-col-title">Courses</div>
+                        <ul class="footer-links">
+                            <li><a href="#">B.Tech CSE</a></li>
+                            <li><a href="#">B.Tech AI/ML</a></li>
+                            <li><a href="#">B.Tech ECE</a></li>
+                            <li><a href="#">BCA & MCA</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="footer-col-title">Company</div>
+                        <ul class="footer-links">
+                            <li><a href="./aboutPage.html">About Us</a></li>
+                            <li><a href="./practicePage.html">Practise</a></li>
+                            <li><a href="./contactPage.html">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copy">© 2025 BrainBank. All rights reserved. Made with ❤️ for learners.</p>
+                    <p class="footer-copy">support@brainbank.com · +91 9876543210</p>
+                </div>
+            </div>
+        </footer>
+
+    </div><!-- end page -->
+
+    <!-- Scroll to Top -->
+    <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/cursor.js"></script>
+</body>
+
+</html>

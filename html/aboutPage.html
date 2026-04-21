@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - BrainBank</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/aboutPage.css">
+</head>
+
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="mesh-bg">
+        <div class="mesh-blob"></div>
+    </div>
+    <div class="grid-overlay"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="page-wrapper">
+
+        <nav class="navbar" id="navbar">
+            <h1 class="headText"><a href="./index.html">Brain<span class="bank">Bank</span></a></h1>
+            <div class="nav-pages">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./resourcepage.html">Resouces</a></li>
+                    <li><a href="./practisePage.html">Practice</a></li>
+                    <li><a href="./aboutPage.html" class="active">About Us</a></li>
+                    <li><a href="./contactPage.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-login">Login</button>
+                <button class="btn-signup">Sign Up</button>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge"><span class="badge-dot"></span> Your Learning Companion</div>
+                <h1 class="hero-title">About<br><span class="hl-orange">Brain</span><span class="hl-blue">Bank</span>
+                </h1>
+                <p class="hero-subtitle">Built for curious minds</p>
+                <p class="hero-description">BrainBank is a comprehensive knowledge repository designed to empower
+                    learners and professionals with quality educational resources — all in one place.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-num">10<span>K+</span></div>
+                        <div class="stat-label">Learners</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">500<span>+</span></div>
+                        <div class="stat-label">Resources</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">98<span>%</span></div>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- STORY SECTION WITH IMAGE -->
+        <section class="story-section">
+            <div class="container">
+                <div class="story-grid">
+                    <div class="story-image-wrap reveal">
+                        <div class="story-accent"></div>
+                        <div class="story-image-frame">
+                            <img src="../assets/images/aboutUs.png">
+                        </div>
+                        <div class="story-badge">
+                            10K+<span>Active Learners</span>
+                        </div>
+                        <div class="story-dots">
+                            <span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="story-content reveal">
+                        <div class="section-label">Our Story</div>
+                        <h2>Where focused minds come to grow and excel</h2>
+                        <p>At BrainBank, we believe every learner deserves access to high-quality educational content.
+                            We saw students struggling to find organized, reliable resources — and we built the
+                            solution.</p>
+                        <p>From curated study materials to interactive practice modules, BrainBank has become the go-to
+                            platform for thousands of learners who refuse to settle for anything less than their best.
+                        </p>
+                        <div class="story-tags">
+                            <span class="story-tag">📚 Curated Content</span>
+                            <span class="story-tag">🎯 Practice Modules</span>
+                            <span class="story-tag">💡 Expert Resources</span>
+                            <span class="story-tag">🚀 Always Growing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="mission-section">
+            <div class="container">
+                <div class="mission-top reveal">
+                    <div>
+                        <div class="section-label">Our Mission</div>
+                        <h2 class="section-head">What drives<br>everything we do</h2>
+                    </div>
+                    <p class="section-sub">We believe quality education should be accessible, organized, and empowering
+                        for everyone willing to learn.</p>
+                </div>
+                <div class="mission-grid reveal">
+                    <div class="mission-card">
+                        <div class="card-glow"></div>
+                        <div class="card-icon icon-blue">📚</div>
+                        <h3>Quality Content</h3>
+                        <p>Curated and verified educational materials to support your learning journey at every step.
+                        </p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="card-glow"></div>
+                        <div class="card-icon icon-orange">🎯</div>
+                        <h3>Focused Learning</h3>
+                        <p>Organized resources that help you concentrate on what matters most for your growth.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="card-glow"></div>
+                        <div class="card-icon icon-blue">💡</div>
+                        <h3>Knowledge Sharing</h3>
+                        <p>A platform where knowledge flows freely to help everyone achieve their educational goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="features-section">
+            <div class="container">
+                <div class="features-layout">
+                    <div class="features-left reveal">
+                        <div class="section-label">Why BrainBank</div>
+                        <h2 class="section-head">Everything you need to learn, nothing you don't</h2>
+                        <p class="section-sub" style="margin-top:1rem;">Four pillars that make BrainBank the go-to
+                            platform for thousands of learners worldwide.</p>
+                    </div>
+                    <div class="features-right reveal">
+                        <div class="feature-item">
+                            <div class="feature-num-box">01</div>
+                            <div>
+                                <h3>Comprehensive Resources</h3>
+                                <p>Access a vast collection of documents, notes, and study materials all in one place.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-num-box">02</div>
+                            <div>
+                                <h3>Practice Modules</h3>
+                                <p>Test your knowledge with our interactive practice section and improve continuously.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-num-box">03</div>
+                            <div>
+                                <h3>Easy Navigation</h3>
+                                <p>Intuitive design makes it simple to find exactly what you're looking for.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-num-box">04</div>
+                            <div>
+                                <h3>Always Updated</h3>
+                                <p>Fresh content added regularly to keep you informed with the latest information.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="cta-section">
+            <div class="cta-inner reveal">
+                <div class="cta-tag">Get Started Today</div>
+                <h2 class="cta-title">Ready to start<br>your journey?</h2>
+                <p class="cta-desc">Join thousands of learners who trust BrainBank for their educational needs. Free to
+                    explore, powerful to use.</p>
+                <div class="cta-buttons">
+                    <button class="cta-primary">Start Exploring</button>
+                    <button class="cta-secondary">Contact Us</button>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 BrainBank. All rights reserved.</p>
+            <p>Made with ❤️ for learners everywhere</p>
+        </footer>
+    </div>
+
+    <script src="../js/about.js"></script>
+    <script src="../js/cursor.js"></script>
+</body>
+
+</html>

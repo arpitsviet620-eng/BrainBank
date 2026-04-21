@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - BrainBank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/contactPage.css">
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <div class="mesh-bg"><div class="mesh-blob"></div></div>
+  <div class="grid-overlay"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <h1 class="headText"><a href="./index.html">Brain<span class="bank">Bank</span></a></h1>
+    <div class="nav-pages">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./resourcepage.html">Resouces</a></li>
+        <li><a href="./practisePage.html">Practice</a></li>
+        <li><a href="./aboutPage.html">About Us</a></li>
+        <li><a href="./contactPage.html" class="active">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-login">Login</button>
+      <button class="btn-signup">Sign Up</button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <section class="contact-hero">
+      <div class="hero-badge"><span class="badge-dot"></span> We'd love to hear from you</div>
+      <h1 class="hero-title">Get in <span class="hl-orange">Touch</span></h1>
+      <p class="hero-sub">Have a question, suggestion, or just want to say hello?<br>Our team is always ready to help.</p>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+
+        <div class="contact-info reveal">
+          <div class="info-header">
+            <div class="section-label">Contact Info</div>
+            <h2>Let's start a <span class="hl-orange">conversation</span></h2>
+            <p class="info-desc">Reach out through any channel below or fill out the form — we respond within 24 hours.</p>
+          </div>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="info-icon icon-blue">📧</div>
+              <div>
+                <div class="info-label">Email Us</div>
+                <div class="info-value">support@brainbank.com</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon icon-orange">📞</div>
+              <div>
+                <div class="info-label">Call Us</div>
+                <div class="info-value">+91 9876543210</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon icon-blue">📍</div>
+              <div>
+                <div class="info-label">Location</div>
+                <div class="info-value">Chandigarh, India</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon icon-orange">🕐</div>
+              <div>
+                <div class="info-label">Working Hours</div>
+                <div class="info-value">Mon–Sat, 9AM – 6PM IST</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-row">
+            <span class="social-label">Follow Us</span>
+            <div class="socials">
+              <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+              <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+              <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+              <a href="#" class="social-btn" aria-label="GitHub">⌥</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal">
+          <div class="form-card">
+            <div class="form-header">
+              <h3>Send a Message</h3>
+              <p>We'll get back to you as soon as possible.</p>
+            </div>
+
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="field-group">
+                  <label for="name">Full Name</label>
+                  <div class="input-wrap">
+                    <span class="input-icon">👤</span>
+                    <input type="text" id="name" placeholder="John Doe" required autocomplete="off">
+                  </div>
+                  <span class="field-error" id="nameError"></span>
+                </div>
+                <div class="field-group">
+                  <label for="email">Email Address</label>
+                  <div class="input-wrap">
+                    <span class="input-icon">✉️</span>
+                    <input type="email" id="email" placeholder="john@example.com" required autocomplete="off">
+                  </div>
+                  <span class="field-error" id="emailError"></span>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="subject">Subject</label>
+                <div class="input-wrap">
+                  <span class="input-icon">📌</span>
+                  <select id="subject" required>
+                    <option value="" disabled selected>Select a topic...</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="partnership">Partnership</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <span class="field-error" id="subjectError"></span>
+              </div>
+
+              <div class="field-group">
+                <label for="message">Your Message</label>
+                <div class="input-wrap textarea-wrap">
+                  <textarea id="message" placeholder="Tell us what's on your mind..." rows="5" required maxlength="500"></textarea>
+                </div>
+                <div class="char-count"><span id="charCount">0</span>/500</div>
+                <span class="field-error" id="messageError"></span>
+              </div>
+
+              <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-icon">→</span>
+                <span class="btn-loader" id="btnLoader"></span>
+              </button>
+            </form>
+
+            <div class="success-state" id="successState">
+              <div class="success-icon">✓</div>
+              <h4>Message Sent!</h4>
+              <p>Thanks for reaching out. We'll get back to you within 24 hours.</p>
+              <button class="reset-btn" id="resetBtn">Send Another</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="../js/contact.js"></script>
+  <script src="../js/cursor.js"></script>
+</body>
+</html>

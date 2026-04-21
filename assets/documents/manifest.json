@@ -1,0 +1,69 @@
+{
+  "btech-cse": {
+    "notes": [
+      { "file": "DSA-Notes.pdf",  "title": "Data Structures & Algorithms", "desc": "Arrays, trees, graphs, sorting and searching algorithms.", "subject": "DSA", "semester": "Sem 3", "size": "4.2 MB" },
+      { "file": "OS-Notes.pdf",   "title": "Operating Systems",            "desc": "Process management, scheduling and file systems.",         "subject": "OS",  "semester": "Sem 4", "size": "3.8 MB" },
+      { "file": "DBMS-Notes.pdf", "title": "Database Management Systems",  "desc": "ER models, SQL, normalization and transactions.",          "subject": "DBMS","semester": "Sem 4", "size": "5.1 MB" }
+    ],
+    "pyq": [
+      { "file": "DSA-PYQ-2023.pdf",  "title": "DSA PYQ 2023",  "desc": "Full paper with solutions.", "subject": "DSA",  "semester": "Sem 3", "size": "1.2 MB", "year": "2023" },
+      { "file": "DBMS-PYQ-2022.pdf", "title": "DBMS PYQ 2022", "desc": "End sem with marking scheme.", "subject": "DBMS","semester": "Sem 4", "size": "0.9 MB", "year": "2022" }
+    ],
+    "video": [
+      { "file": null, "url": "https://www.youtube.com/playlist?list=PLdo5W4Nhv31bbKJzrsKfMpo_grxuLl8LU", "title": "DSA Full Course", "desc": "60+ lectures covering all data structures.", "subject": "DSA", "semester": "Sem 3", "duration": "42 hrs" }
+    ]
+  },
+  "btech-ai": {
+    "notes": [
+      { "file": "ML-Notes.pdf", "title": "Machine Learning Fundamentals", "desc": "Supervised, unsupervised learning, regression and classification.", "subject": "ML", "semester": "Sem 5", "size": "6.2 MB" },
+      { "file": "DL-Notes.pdf", "title": "Deep Learning & Neural Networks","desc": "CNN, RNN, LSTM, transformers explained.", "subject": "DL", "semester": "Sem 6", "size": "7.4 MB" }
+    ],
+    "pyq": [
+      { "file": "ML-PYQ-2023.pdf", "title": "ML End Sem 2023", "desc": "Previous year paper with model answers.", "subject": "ML", "semester": "Sem 5", "size": "1.1 MB", "year": "2023" }
+    ],
+    "video": [
+      { "file": null, "url": "https://youtube.com", "title": "ML with Python", "desc": "Complete ML with scikit-learn and real projects.", "subject": "ML", "semester": "Sem 5", "duration": "36 hrs" }
+    ]
+  },
+  "btech-ece": {
+    "notes": [
+      { "file": "SS-Notes.pdf", "title": "Signals & Systems",   "desc": "Fourier transforms and LTI systems.", "subject": "SS", "semester": "Sem 3", "size": "4.4 MB" },
+      { "file": "DE-Notes.pdf", "title": "Digital Electronics", "desc": "Logic gates, flip-flops and sequential circuits.", "subject": "DE", "semester": "Sem 3", "size": "3.9 MB" }
+    ],
+    "pyq": [
+      { "file": "SS-PYQ-2023.pdf", "title": "Signals & Systems 2023", "desc": "End semester paper with solutions.", "subject": "SS", "semester": "Sem 3", "size": "0.8 MB", "year": "2023" }
+    ],
+    "video": []
+  },
+  "btech-mech": {
+    "notes": [
+      { "file": "Thermo-Notes.pdf", "title": "Engineering Thermodynamics", "desc": "Laws of thermodynamics, heat engines, entropy.", "subject": "Thermo", "semester": "Sem 4", "size": "5.0 MB" }
+    ],
+    "pyq": [
+      { "file": "Thermo-PYQ.pdf", "title": "Thermodynamics PYQ 2023", "desc": "Previous year with detailed solutions.", "subject": "Thermo", "semester": "Sem 4", "size": "0.9 MB", "year": "2023" }
+    ],
+    "video": []
+  },
+  "bca": {
+    "notes": [
+      { "file": "WT-Notes.pdf", "title": "Web Technologies", "desc": "HTML, CSS, JS, PHP and MySQL.", "subject": "WT", "semester": "Sem 4", "size": "4.1 MB" }
+    ],
+    "pyq": [
+      { "file": "WT-PYQ-2023.pdf", "title": "Web Tech PYQ 2023", "desc": "BCA web technologies paper.", "subject": "WT", "semester": "Sem 4", "size": "0.7 MB", "year": "2023" }
+    ],
+    "video": [
+      { "file": null, "url": "https://youtube.com", "title": "Web Dev Bootcamp", "desc": "HTML to React and Node.js.", "subject": "WT", "semester": "Sem 4", "duration": "48 hrs" }
+    ]
+  },
+  "mca": {
+    "notes": [
+      { "file": "Java-Notes.pdf", "title": "Advanced Java", "desc": "Core Java, JSP, Servlets, Spring Boot.", "subject": "Java", "semester": "Sem 2", "size": "5.5 MB" }
+    ],
+    "pyq": [
+      { "file": "Java-PYQ-2023.pdf", "title": "Advanced Java 2023", "desc": "MCA Java previous year paper.", "subject": "Java", "semester": "Sem 2", "size": "0.85 MB", "year": "2023" }
+    ],
+    "video": [
+      { "file": null, "url": "https://youtube.com", "title": "Java Full Stack", "desc": "Spring Boot, React, REST APIs.", "subject": "Java", "semester": "Sem 2", "duration": "60 hrs" }
+    ]
+  }
+}

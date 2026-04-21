@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise - BrainBank</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/practisePage.css">
+</head>
+
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="mesh-bg">
+        <div class="mesh-blob"></div>
+    </div>
+    <div class="grid-overlay"></div>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="page-wrapper">
+
+        <!-- NAVBAR -->
+        <nav class="navbar" id="navbar">
+            <h1 class="headText"><a href="/">Brain<span class="bank">Bank</span></a></h1>
+            <div class="nav-pages">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./resourcepage.html">Resouces</a></li>
+                    <li><a href="./practisePage.html" class="active">Practice</a></li>
+                    <li><a href="./aboutPage.html">About Us</a></li>
+                    <li><a href="./contactPage.html">Contact Us</a></li>
+                </ul>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-login">Login</button>
+                <button class="btn-signup">Sign Up</button>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <section class="practice-hero">
+            <div class="hero-badge"><span class="badge-dot"></span> Sharpen your skills daily</div>
+            <h1 class="hero-title">Practice &<br><span class="hl-orange">Level</span> <span class="hl-blue">Up</span>
+            </h1>
+            <p class="hero-sub">Test your aptitude, reasoning, verbal and technical skills with curated questions. Timed
+                quizzes. Instant feedback. Real growth.</p>
+        </section>
+
+        <!-- MAIN -->
+        <div class="categories-section">
+
+            <!-- STATS -->
+            <div class="stats-bar reveal">
+                <div class="stat-cell">
+                    <div class="stat-num">500<span>+</span></div>
+                    <div class="stat-label">Questions</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-num">6<span>+</span></div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-num">10<span>K+</span></div>
+                    <div class="stat-label">Attempts</div>
+                </div>
+                <div class="stat-cell">
+                    <div class="stat-num">95<span>%</span></div>
+                    <div class="stat-label">Satisfaction</div>
+                </div>
+            </div>
+
+            <div class="page-divider"></div>
+
+            <!-- CATEGORIES -->
+            <div class="section-label reveal">Choose a Category</div>
+            <div class="cat-grid" id="categoryGrid">
+
+                <div class="cat-card reveal" data-color="orange" data-cat="aptitude" style="animation-delay:0.1s">
+                    <div class="cat-top">
+                        <div class="cat-icon orange">🧮</div>
+                        <span class="cat-badge orange">Popular</span>
+                    </div>
+                    <div class="cat-title">Quantitative Aptitude</div>
+                    <div class="cat-desc">Number systems, percentages, profit & loss, time & work, speed & distance and
+                        more.</div>
+                    <div class="cat-footer">
+                        <div class="cat-meta">
+                            <span>📋 10 Questions</span>
+                            <span>⏱ 15 mins</span>
+                        </div>
+                        <button class="start-btn" onclick="startQuiz('aptitude')">Start →</button>
+                    </div>
+                </div>
+
+                <div class="cat-card reveal" data-color="blue" data-cat="reasoning" style="animation-delay:0.2s">
+                    <div class="cat-top">
+                        <div class="cat-icon blue">🧠</div>
+                        <span class="cat-badge blue">Trending</span>
+                    </div>
+                    <div class="cat-title">Logical Reasoning</div>
+                    <div class="cat-desc">Blood relations, seating arrangements, syllogisms, coding-decoding and
+                        puzzles.</div>
+                    <div class="cat-footer">
+                        <div class="cat-meta">
+                            <span>📋 10 Questions</span>
+                            <span>⏱ 15 mins</span>
+                        </div>
+                        <button class="start-btn" onclick="startQuiz('reasoning')">Start →</button>
+                    </div>
+                </div>
+
+                <div class="cat-card reveal" data-color="green" data-cat="verbal" style="animation-delay:0.3s">
+                    <div class="cat-top">
+                        <div class="cat-icon green">📖</div>
+                        <span class="cat-badge green">New</span>
+                    </div>
+                    <div class="cat-title">Verbal Ability</div>
+                    <div class="cat-desc">Synonyms, antonyms, sentence completion, reading comprehension and grammar.
+                    </div>
+                    <div class="cat-footer">
+                        <div class="cat-meta">
+                            <span>📋 10 Questions</span>
+                            <span>⏱ 15 mins</span>
+                        </div>
+                        <button class="start-btn" onclick="startQuiz('verbal')">Start →</button>
+                    </div>
+                </div>
+
+                <div class="cat-card reveal" data-color="purple" data-cat="ds" style="animation-delay:0.4s">
+                    <div class="cat-top">
+                        <div class="cat-icon purple">💻</div>
+                        <span class="cat-badge purple">Technical</span>
+                    </div>
+                    <div class="cat-title">Data Structures</div>
+                    <div class="cat-desc">Arrays, linked lists, stacks, queues, trees, graphs and algorithm complexity.
+                    </div>
+                    <div class="cat-footer">
+                        <div class="cat-meta">
+                            <span>📋 10 Questions</span>
+                            <span>⏱ 20 mins</span>
+                        </div>
+                        <button class="start-btn" onclick="startQuiz('ds')">Start →</button>
+                    </div>
+                </div>
+
+                <div class="cat-card reveal" data-color="yellow" data-cat="general" style="animation-delay:0.5s">
+                    <div class="cat-top">
+                        <div class="cat-icon yellow">🌍</div>
+                        <span class="cat-badge yellow">GK</span>
+                    </div>
+                    <div class="cat-title">General Knowledge</div>
+                    <div class="cat-desc">Current affairs, history, geography, science and technology fundamentals.
+                    </div>
+                    <div class="cat-footer">
+                        <div class="cat-meta">
+                            <span>📋 10 Questions</span>
+                            <span>⏱ 10 mins</span>
+                        </div>
+                        <button class="start-btn" onclick="startQuiz('general')">Start →</button>
+                    </div>
+                </div>
+
+                <div class="cat-card reveal" data-color="rose" data-cat="dbms" style="animation-delay:0.6s">
+                    <div class="cat-top">
+                        <div class="cat-icon rose">🗄️</div>
+                        <span class="cat-badge rose">Technical</span>
+                    </div>
+                    <div class="cat-title">DBMS & SQL</div>
+                    <div class="cat-desc">Normalization, ER diagrams, SQL queries, transactions, joins and indexing.
+                    </div>
+                    <div class="cat-footer">
+                        <div class="cat-meta">
+                            <span>📋 10 Questions</span>
+                            <span>⏱ 20 mins</span>
+                        </div>
+                        <button class="start-btn" onclick="startQuiz('dbms')">Start →</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     QUIZ MODAL
+══════════════════════════════ -->
+    <div class="quiz-overlay" id="quizOverlay">
+        <div class="quiz-modal" id="quizModal">
+            <div class="quiz-bar"></div>
+
+            <!-- QUESTION VIEW -->
+            <div id="quizView">
+                <div class="quiz-header">
+                    <div class="quiz-cat-info">
+                        <div class="quiz-cat-icon" id="quizCatIcon"></div>
+                        <div class="quiz-cat-name" id="quizCatName"></div>
+                    </div>
+                    <div class="quiz-controls">
+                        <div class="quiz-timer" id="quizTimer">⏱ 15:00</div>
+                        <button class="close-quiz" onclick="closeQuiz()">✕</button>
+                    </div>
+                </div>
+
+                <div class="quiz-progress-wrap">
+                    <div class="progress-row">
+                        <span class="progress-label" id="progressLabel">Question 1 of 10</span>
+                        <span class="progress-label" id="scoreLabel">Score: 0</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progressFill" style="width:10%"></div>
+                    </div>
+                </div>
+
+                <div class="quiz-body">
+                    <div class="q-number" id="qNumber">Question 01</div>
+                    <div class="q-text" id="qText"></div>
+                    <div class="options-grid" id="optionsGrid"></div>
+                    <div class="explanation-box" id="explanationBox">
+                        <div class="exp-label">💡 Explanation</div>
+                        <div class="exp-text" id="expText"></div>
+                    </div>
+                </div>
+
+                <div class="quiz-footer">
+                    <div class="q-dots" id="qDots"></div>
+                    <button class="next-btn" id="nextBtn" onclick="nextQuestion()" disabled>Next →</button>
+                </div>
+            </div>
+
+            <!-- RESULTS VIEW -->
+            <div class="results-screen" id="resultsView">
+                <div class="results-circle" id="resultsCircle">
+                    <svg width="120" height="120" viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r="52" fill="none" stroke="var(--dark-3)" stroke-width="8" />
+                        <circle cx="60" cy="60" r="52" fill="none" stroke="url(#scoreGrad)" stroke-width="8"
+                            stroke-linecap="round" id="scoreArc" stroke-dasharray="326.7" stroke-dashoffset="326.7" />
+                        <defs>
+                            <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#3B82F6" />
+                                <stop offset="100%" stop-color="#F97316" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="results-score-num" id="resultsPct">0%</div>
+                    <div class="results-score-label">Score</div>
+                </div>
+                <div class="results-title" id="resultsTitle">Well Done!</div>
+                <div class="results-sub" id="resultsSub">Keep practicing to improve your score</div>
+                <div class="results-stats">
+                    <div class="results-stat">
+                        <div class="results-stat-num" id="resCorrect" style="color:var(--green)">0</div>
+                        <div class="results-stat-label">Correct</div>
+                    </div>
+                    <div class="results-stat">
+                        <div class="results-stat-num" id="resWrong" style="color:var(--red)">0</div>
+                        <div class="results-stat-label">Wrong</div>
+                    </div>
+                    <div class="results-stat">
+                        <div class="results-stat-num" id="resTime" style="color:var(--blue-light)">0s</div>
+                        <div class="results-stat-label">Time Taken</div>
+                    </div>
+                </div>
+                <div class="results-actions">
+                    <button class="btn-retry" id="retryBtn">↺ Try Again</button>
+                    <button class="btn-home" onclick="closeQuiz()">← Back to Categories</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/practise.js"></script>
+    <script src="../js/cursor.js"></script>
+</body>
+
+</html>

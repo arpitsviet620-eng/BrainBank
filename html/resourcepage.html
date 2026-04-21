@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resouces - BrainBank</title>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+  rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/resourcePage.css">
+</head>
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="mesh-bg"><div class="mesh-blob"></div></div>
+<div class="grid-overlay"></div>
+<canvas id="bg-canvas"></canvas>
+ 
+<div class="page-wrapper">
+ 
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <h1 class="headText"><a href="./index.html">Brain<span class="bank">Bank</span></a></h1>
+    <div class="nav-pages">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./resourcepage.html" class="active">Resources</a></li>
+        <li><a href="./practisePage.html">Practice</a></li>
+        <li><a href="./aboutPage.html">About Us</a></li>
+        <li><a href="./contactPage.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-login">Login</button>
+      <button class="btn-signup">Sign Up</button>
+    </div>
+  </nav>
+ 
+  <!-- HERO -->
+  <section class="res-hero">
+    <div class="hero-badge"><span class="badge-dot"></span> 500+ Resources Available</div>
+    <h1 class="hero-title">All <span class="hl-orange">Resources</span><br>One <span class="hl-blue">Place</span></h1>
+    <p class="hero-sub">Notes, Previous Year Questions & Video Lectures for every course — curated, verified, and free to download.</p>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search resources, subjects, topics...">
+      <button class="search-clear" id="searchClear">✕</button>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">120<span>+</span></div><div class="stat-label">Notes</div></div>
+      <div class="stat"><div class="stat-num">80<span>+</span></div><div class="stat-label">PYQs</div></div>
+      <div class="stat"><div class="stat-num">300<span>+</span></div><div class="stat-label">Videos</div></div>
+      <div class="stat"><div class="stat-num">6<span>+</span></div><div class="stat-label">Courses</div></div>
+    </div>
+  </section>
+ 
+  <div class="page-divider"></div>
+ 
+  <!-- MAIN -->
+  <div class="main-layout">
+ 
+    <!-- SIDEBAR -->
+    <aside class="sidebar reveal">
+ 
+      <div class="sidebar-section">
+        <div class="sidebar-title">Courses</div>
+        <div class="course-list" id="courseList">
+          <button class="course-btn active" data-course="all">
+            <span class="course-dot" style="background:#F97316"></span> All Courses
+            <span class="course-count" id="countAll">500</span>
+          </button>
+          <button class="course-btn" data-course="btech-cse">
+            <span class="course-dot" style="background:#3B82F6"></span> B.Tech CSE
+            <span class="course-count">120</span>
+          </button>
+          <button class="course-btn" data-course="btech-ai">
+            <span class="course-dot" style="background:#A855F7"></span> B.Tech AI/ML
+            <span class="course-count">95</span>
+          </button>
+          <button class="course-btn" data-course="btech-ece">
+            <span class="course-dot" style="background:#22C55E"></span> B.Tech ECE
+            <span class="course-count">80</span>
+          </button>
+          <button class="course-btn" data-course="btech-mech">
+            <span class="course-dot" style="background:#F43F5E"></span> B.Tech Mech
+            <span class="course-count">70</span>
+          </button>
+          <button class="course-btn" data-course="bca">
+            <span class="course-dot" style="background:#FB923C"></span> BCA
+            <span class="course-count">65</span>
+          </button>
+          <button class="course-btn" data-course="mca">
+            <span class="course-dot" style="background:#60A5FA"></span> MCA
+            <span class="course-count">70</span>
+          </button>
+        </div>
+      </div>
+ 
+      <div class="sidebar-section">
+        <div class="sidebar-title">Resource Type</div>
+        <div class="type-filters" id="typeFilters">
+          <button class="type-btn active" data-type="all">
+            <div class="type-icon" style="background:rgba(255,255,255,0.06);border:1px solid var(--glass-border)">📦</div>
+            All Types
+          </button>
+          <button class="type-btn" data-type="notes">
+            <div class="type-icon res-icon-notes">📄</div>
+            Notes
+          </button>
+          <button class="type-btn" data-type="pyq">
+            <div class="type-icon res-icon-pyq">📝</div>
+            PYQ Papers
+          </button>
+          <button class="type-btn" data-type="video">
+            <div class="type-icon res-icon-video">▶️</div>
+            Video Lectures
+          </button>
+        </div>
+      </div>
+ 
+    </aside>
+ 
+    <!-- CONTENT -->
+    <div class="content-area">
+      <div class="content-topbar reveal">
+        <div class="results-info" id="resultsInfo">Showing <strong>24</strong> resources</div>
+        <div class="view-toggle">
+          <button class="view-btn active" id="gridViewBtn" title="Grid View">⊞</button>
+          <button class="view-btn" id="listViewBtn" title="List View">☰</button>
+        </div>
+      </div>
+      <div id="resourcesContainer"></div>
+    </div>
+ 
+  </div>
+ 
+</div>
+
+<script src="../js/resource.js"></script>
+<script src="../js/cursor.js"></script>
+</body>
+</html>
